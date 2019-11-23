@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="calc/style.css">
+    <link rel="stylesheet" href="calc/range.css">
+    <title>Calc</title>
+</head>
+<body>
+    <div class="divCalc">
+        <h2 class="pink">ОНЛАЙН 
+            <p class="head">КАЛЬКУЛЯТОР</p>
+        </h2>
+        <form action="">
+            <label for="from">Откуда</label>
+            <input list="city" id="form" class="inp" placeholder="Алматы">
+
+            <label for="to">Куда</label>
+            <input list="city2" id="to" class="inp" placeholder="Нур-Cултан" oninput="getValueInp()">
+
+            <label for="size">Вес доставки</label>
+            <input type="range" id="size" class="range" min="1" max="1000" value="1" oninput="getValueRange();">
+
+            <label for="name" class="label">Имя</label>
+            <input type="text" id="name" class="inp name" name="name">
+            <label for="phone" class="label">Номер телефона</label>
+            <input type="text" id="phone" class="inp phone" name="phone">
+
+            <label for="radioBtn" class="labelRadio">Способы доставки *</label>
+                  <p>
+                    <input type="radio" id="test1" name="radio-group" checked>
+                    <label for="test1">Авиатранспортом</label>
+                  </p>
+                  <p>
+                    <input type="radio" id="test2" name="radio-group">
+                    <label for="test2">Наземным транспортом</label>
+                  </p>
+
+
+            <span id="resSize">1 кг</span>
+            <span id="resValue">800 тг</span>
+
+
+            <datalist id="city">
+                <option>Алматы</option>
+            </datalist>
+            <datalist id="city2">
+                <option>Нур-Cултан</option>
+                <option>Павлодар</option>
+                <option>Караганды</option>
+                <option>Экибастуз</option>
+                <option>Петропавловск</option>
+                <option>Костанай</option>
+                <option>Семей</option>
+                <option>Усть-Каменогорск</option>
+                <option>Шымкент</option>
+                <option>Талды-Курган</option>
+                <option>Тараз</option>
+                <option>Кызыл-Орда</option>
+                <option>Актобе</option>
+                <option>Уральск</option>
+                <option>Атырау</option>
+                <option>Актау</option>
+                <option>Жезказган</option>
+                <option>Темиртау</option>
+                <option>Балхаш</option>
+                <option>Рудный</option>
+                <option label="доставка в течении дня">Алматы</option>
+                <option label="доставка к определенному часу">Алматы</option>
+                <option label="доставка в течении суток">Алматы</option>
+                <option label="вечерняя доставка (20:00 до 23:00)">Алматы</option>
+                <option label="*Удаленный район (день в день)">Алматы</option>
+                <option label="*Удаленный район 1-2 дней">Алматы</option>
+            </datalist>
+        </form>
+    </div>
+
+    <script src="calc/script.js"></script>
+</body>
+</html>

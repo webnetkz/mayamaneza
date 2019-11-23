@@ -1,0 +1,133 @@
+body {
+    font-family: sans-serif;
+}
+.divCalc {
+    box-sizing: border-box;
+    width: 392px;
+    height: 566px;
+    margin-left: 238px;
+    margin-top: 68px;
+    box-shadow: 0px 0px 30px rgba(22, 22, 22, 0.1);
+    padding: 20px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.pink {
+    color: rgb(255,86,86);
+    text-align: center;
+}
+.head {
+    display: inline;
+    color: rgb(54, 54, 54);
+    font-size: 1.1em;
+}
+.inp {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    color: rgb(165,68,130);
+    border-radius: 5px;
+    border: 2px solid rgb(105,150,235);
+    outline: none;
+    background-color: rgb(241,247,248);
+}
+label {
+    position: relative;
+    display: inline-block;
+    color: rgb(127, 127 ,127);
+    font-weight: 900;
+    font-size: 0.8em;
+    padding: 5px;
+}
+.label {
+    top: -2em;
+}
+.range {
+    width: 100%;
+    outline : none;
+}
+#resSize {
+    display: block;
+    text-align: center;
+}
+#resValue {
+    display: block;
+    text-align: center;
+}
+.name {
+    position: relative;
+    display: inline-block;
+    width: 43%;
+    left: -3em;
+}
+.phone {
+    position: relative;
+    display: inline-block;
+    width: 53%;
+    left: 46%;
+    top: -2.1em;
+}
+.labelRadio {
+    position: relative;
+    left: -55%;
+}
+.radioBtn {
+    display: block;
+}
+
+
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 7px;
+    display: inline-block;
+    color: rgb(127, 127 ,127);
+    font-weight: 200;
+    font-size: 1em;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ddd;
+    border-radius: 100%;
+    background: #fff;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    border: 6px solid rgb(45,105,228);
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
