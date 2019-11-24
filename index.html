@@ -6,7 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="calc/style.css">
     <link rel="stylesheet" href="calc/range.css">
+    <link rel="stylesheet" href="calc/rangeSlider.css"/>
+    
+    <!--jQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!--Plugin JavaScript file-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
+
     <title>Calc</title>
+
+
 </head>
 <body>
     <div class="divCalc">
@@ -15,13 +25,22 @@
         </h2>
         <form action="">
             <label for="from">Откуда</label>
-            <input list="city" id="form" class="inp" placeholder="Алматы">
+            <input list="city" id="form" class="inp" placeholder="Алматы" value="Алматы">
 
             <label for="to">Куда</label>
             <input list="city2" id="to" class="inp" placeholder="Нур-Cултан" oninput="getValueInp()">
 
             <label for="size">Вес доставки</label>
-            <input type="range" id="size" class="range" min="1" max="1000" value="1" oninput="getValueRange();">
+            <p style="margin-top: 0;">
+                <label for="check" style="margin-left: 25%;">Вес более тонны</label>
+                <input type="checkbox" id="check" oninput="checkGo();" >
+            </p>
+            <!--<input type="range" id="size" class="range" min="1" max="1000" value="1" oninput="getValueRange();">-->
+            <input type="text" class="js-range-slider" value="1" id="size" oninput="getValueRange();">
+            <input type="text" class="js-range-slider" value="1" id="size2" oninput="getValueRange2();">
+            <br>
+            <br>
+
 
             <label for="name" class="label">Имя</label>
             <input type="text" id="name" class="inp name" name="name">
@@ -38,9 +57,14 @@
                     <label for="test2">Наземным транспортом</label>
                   </p>
 
+            <p class="resSize">Допустимый вес <span id="resSize">1 кг</span></p>
+            <p class="resSize">Итого: <span id="resValue">800 тг</span></p>
 
-            <span id="resSize">1 кг</span>
-            <span id="resValue">800 тг</span>
+                <button type="submit" name="go">
+                    <img src="calc/button.png">
+                </button>
+            
+            <p class="small">В иных случаях, точную цену за перевозку груза - уточнять по телефону или отправив заявку.</p>
 
 
             <datalist id="city">
@@ -49,6 +73,7 @@
             <datalist id="city2">
                 <option>Нур-Cултан</option>
                 <option>Павлодар</option>
+                <option>Кокшетау</option>
                 <option>Караганды</option>
                 <option>Экибастуз</option>
                 <option>Петропавловск</option>
@@ -67,12 +92,6 @@
                 <option>Темиртау</option>
                 <option>Балхаш</option>
                 <option>Рудный</option>
-                <option label="доставка в течении дня">Алматы</option>
-                <option label="доставка к определенному часу">Алматы</option>
-                <option label="доставка в течении суток">Алматы</option>
-                <option label="вечерняя доставка (20:00 до 23:00)">Алматы</option>
-                <option label="*Удаленный район (день в день)">Алматы</option>
-                <option label="*Удаленный район 1-2 дней">Алматы</option>
             </datalist>
         </form>
     </div>
