@@ -1,0 +1,3 @@
+User-agent: *
+Host: mayamaneza.kz
+Sitemap: http://mayamaneza.kz/sitemap.xml
